@@ -7,6 +7,12 @@ public class Rpg {
 		
 		Thief thief = new Thief("トリックスター");
 		System.out.println(thief.name);
+		
+		Hero hero = new Hero();
+		PoisonMatango p = new PoisonMatango('A');
+		
+		p.attack(hero);
+		hero.run();
 	}
 
 }
