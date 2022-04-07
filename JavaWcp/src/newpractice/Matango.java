@@ -1,11 +1,11 @@
 package newpractice;
 
-public class Matango {
-	int hp = 50;
-	char suffix;
+public class Matango extends Monster{
+	
 	
 	public Matango(char suffix) {
-		this.suffix = suffix;
+		super(suffix);
+		this.hp = 50;
 	}
 	
 	public void attack(Hero h) {
