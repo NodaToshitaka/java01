@@ -13,6 +13,16 @@ public class Rpg {
 		
 		p.attack(hero);
 		hero.run();
+		
+		Wizard wizard = new Wizard();
+		Wand wand = new Wand();
+		wand.setName("仕込み杖");
+		wand.setPower(10.0);
+		wizard.setName("ウィザード");
+		wizard.setWand(wand);
+		
+		wizard.heal(hero);
 	}
+	
 
 }
