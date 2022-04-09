@@ -3,10 +3,10 @@ package newpractice;
 public class Clelic {
 	String name;
 	
-	final int HP = 50;
+	static final int HP = 50;
 	int hp = HP;
 	
-	final int MP = 10;
+	static final int MP = 10;
 	int mp = MP;
 	
 	public void selfAid() {
