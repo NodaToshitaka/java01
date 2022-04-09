@@ -9,6 +9,10 @@ public class Abc {
 		for(Y yy : y) {
 			yy.b();
 		}
+		Account acc = new Account();
+		acc.accountNumber ="1456";
+		acc.balance = 1000000;
+		System.out.println(acc);
 	}
 
 }
