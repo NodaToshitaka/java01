@@ -1,6 +1,8 @@
 package newpractice;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 public class Number {
@@ -18,6 +20,7 @@ public class Number {
 		
 		FilePath fil = new FilePath();
 		System.out.println(fil.concatPath("c\\folder", "file.txt"));
+		
 		Calendar c = Calendar.getInstance();
 		Date now =new Date();
 		c.setTime(now);
@@ -27,6 +30,11 @@ public class Number {
 		Date date = c.getTime();
 		SimpleDateFormat f = new SimpleDateFormat("西暦yyyy年MM月dd日");
 		System.out.println(f.format(date));
+		
+		LocalDateTime l = LocalDateTime.now();
+		LocalDateTime fu = l.plusDays(100);
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("西暦yyyy年MM月dd日");
+		System.out.println(fu.format(fmt));
 	}
 
 }
