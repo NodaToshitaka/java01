@@ -1,7 +1,7 @@
 package newpractice;
 
 public class Free2 {
-	public static void main(String[] args) {
+	{
 		System.out.println("七三分けゲームを始めます");
 		System.out.println("数字を入力してください");
 		int num1 = new java.util.Scanner(System.in).nextInt();
