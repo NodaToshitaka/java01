@@ -21,6 +21,27 @@ public class Practice6 {
 		
 		x = Integer.parseInt(br.readLine());
 		triangle(x);
+		
+		triangleC(3, '&');
+		triangleC(5, '#');
+		triangleC(8, '\\');
+		
+		for(int i = 0; i < 9; i++) {
+			mt(i + 1);
+			System.out.println("");
+		}
+		
+		for(int i = 10000; i < 10100; i++) {
+		  if(prime(i) == true) {
+			  System.out.print(i + " "); 
+		  }
+		}
+		System.out.println("");
+		
+		
+		for(int i = 11; i < 21; i++) {
+			System.out.print(fb(i) + " ");
+		}
 	}
 	
 	public static int square(int num) {
@@ -48,6 +69,53 @@ public class Practice6 {
 			}
 			System.out.println("");
 		}
+	}
+	
+	public static void triangleC(int x, char ch) {
+		for(int i = 0; i < x; i++) {
+			for(int n = 0; n <= i; n++) {
+				System.out.print(ch);
+			}
+			System.out.println("");
+		}
+	}
+	
+	public static void mt(int x) {
+		for(int i = 0; i < 9; i++) {
+			System.out.print(x * (i + 1));
+		}
+	}
+	
+	public static boolean prime(int x) {
+		int num;
+		for(num = 2; num <= (x /2); num++) {
+			if(x % num == 0) {
+				break;
+			}
+		}
+		
+		if(num > (x / 2)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static int fb(int x) {
+		int num1 = 0;
+		int num2 = 1;
+		int num3 = num1 + num2;
+		int count = 1;
+		while(count <= x) {
+			if(count == x) {
+				break;
+			}
+			num1 = num2;
+			num2 = num3;
+			num3 = num1 + num2;
+			count++;
+		}
+		return num1;
 	}
 
 }
