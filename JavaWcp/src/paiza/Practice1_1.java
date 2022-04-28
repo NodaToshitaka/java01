@@ -7,9 +7,14 @@ public class Practice1_1{
 	public static void main(String[] args)  throws IndexOutOfBoundsException{
 	       
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        String s = "abc";
-        String t = "zab";
+        int ns = sc.nextInt();
+        sc.nextLine();
+        String ss = sc.nextLine();
+        String ts = sc.nextLine();
+        
+        int n = ns;
+        String s = ss;
+        String t = ts;
         
         char []alphabet = new char[26];
         char c = 'a';
@@ -32,15 +37,22 @@ public class Practice1_1{
         int sa =0;
         int ta = 0;
         int[] rots = new int[n];
-        for (int i = 0; i < 26; i++){
+        for (int i = 0; i < n; i++){
             for(int j = 0; j <26; j++) {
-                if(alphabet[j] == S[i]) {
+                if(alphabet[j] == S[i] && alphabet[j] == T[i]) {
                     sa = j;
+                    ta = j;
+                } else if(alphabet[j] == S[i]) {
+                	sa = j;
                 } else if(alphabet[j] == T[i]) {
                     ta = j;
                 }
+               
             }
             rots[i] = ta - sa;
+            if(rots[i] < 0) {
+            	rots[i] += 26;
+            }
         }
         Arrays.sort(rots);
         int pre_mode, num, max_num;
@@ -57,9 +69,9 @@ public class Practice1_1{
                     mode = pre_mode;
                     max_num = num;
                 }
+                pre_mode = rots[i];
+                num = 1;
             }
-            pre_mode = rots[i];
-            num = 1;
         }
         
         if(num > max_num) {
@@ -73,7 +85,11 @@ public class Practice1_1{
         } else if (max_num == n - 1) {
             int[] Td = new int [n];
             for(int i =0; i < n; i++) {
-                Td[i] = S[i] += mode;
+                for(int j =0; j < 26; j++ )  {
+                	if(alphabet[j] == S[i]) {
+                		Td[i] = alphabet[j + mode];
+                	}
+                }
             }
             System.out.print("fixed");
             for(int td : Td) {
