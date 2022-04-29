@@ -83,16 +83,23 @@ public class Practice1_1{
         if(max_num == n) {
             System.out.println("correct rot-" + mode);
         } else if (max_num == n - 1) {
-            int[] Td = new int [n];
+            char[] Td = new char [n];
             for(int i =0; i < n; i++) {
                 for(int j =0; j < 26; j++ )  {
                 	if(alphabet[j] == S[i]) {
-                		Td[i] = alphabet[j + mode];
+                		int ans;
+                		if(j + mode > 25) {
+                			ans = j + mode - 26;
+                		} else {
+                			ans = j + mode ;
+                		}
+                		Td[i] = alphabet[ans];
+                		
                 	}
                 }
             }
-            System.out.print("fixed");
-            for(int td : Td) {
+            System.out.print("fixed ");
+            for(char td : Td) {
                 System.out.print(td);
             }
             System.out.println("");
